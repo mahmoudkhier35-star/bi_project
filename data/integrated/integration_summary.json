@@ -1,0 +1,15 @@
+{
+  "initial_raw_rows": 1048575,
+  "empty_padding_rows_dropped": 464051,
+  "valid_records_retained": 584524,
+  "customers_rows": 115327,
+  "products_rows": 84800,
+  "categories_rows": 16,
+  "payment_methods_rows": 18,
+  "orders_rows": 408782,
+  "order_details_rows": 584524,
+  "total_gross_gmv": 4195307997.08,
+  "completed_orders_count": 169502,
+  "canceled_orders_count": 148998,
+  "refunded_orders_count": 53158
+}
