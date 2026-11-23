@@ -1,0 +1,697 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="ysbRKPjB03hIvZb6AzSq">
+    <mxGraphModel dx="2000" dy="1002" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;\nerDiagram\n    Dim_Date ||--o{ Fact_Orders : order_date\n    Dim_Date ||--o{ Fact_OrderItems : order_date\n\n    Dim_Customer ||--o{ Fact_Orders : places\n    Dim_PaymentMethod ||--o{ Fact_Orders : paid_by\n\n    Fact_Orders ||--|{ Fact_OrderItems : contains\n    Dim_Product ||--o{ Fact_OrderItems : includes\n\n    Dim_Date {\n        int date_key PK\n        date full_date\n        int year_num\n        int quarter_num\n        int month_num\n        string month_name\n        string month_year\n        int day_of_month\n        string day_of_week\n        string day_name\n        boolean is_weekend\n        int fiscal_year\n    }\n\n    Fact_Orders {\n        int order_id PK\n        int customer_key FK\n        int payment_method_key FK\n        int order_date_key FK\n        string order_status\n        decimal grand_total\n    }\n\n    Fact_OrderItems {\n        int order_detail_id PK\n        int order_id FK\n        int product_key FK\n        int order_date_key FK\n        int qty_ordered\n        decimal unit_price\n        decimal discount_amount\n        decimal total_amount\n    }\n\n    Dim_Customer {\n        int customer_key PK\n        date customer_since\n    }\n\n    Dim_PaymentMethod {\n        int payment_method_key PK\n        string payment_method_name\n        string payment_channel\n    }\n\n    Dim_Product {\n        int product_key PK\n        string sku\n        string category_name\n        decimal catalog_price\n    }\n&quot;,&#xa;  &quot;config&quot;: null,&#xa;  &quot;version&quot;: &quot;12&quot;&#xa;}" id="juC9MrDamXzyti8gbEs--2">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Dim_Date" mermaidId="n:Dim_Date" mermaidBaseStyle="shape=table;startSize=39.75;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontSize=16;fontFamily=Recursive;strokeWidth=2;align=center;resizeLast=1;html=1;fillColor=#FDF4FF;strokeColor=#E879F9;fontColor=#28253D;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;" mermaidBaseValue="Dim_Date" id="juC9MrDamXzyti8gbEs--3">
+          <mxCell parent="juC9MrDamXzyti8gbEs--2" style="shape=table;startSize=39.75;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontSize=14;fontFamily=Recursive;strokeWidth=2;align=center;resizeLast=1;html=1;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
+            <mxGeometry height="439" width="242" x="290" y="130" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="juC9MrDamXzyti8gbEs--4" parent="juC9MrDamXzyti8gbEs--3" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="242" y="39" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--5" parent="juC9MrDamXzyti8gbEs--4" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="80" as="geometry">
+            <mxRectangle height="40" width="80" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--6" parent="juC9MrDamXzyti8gbEs--4" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="date_id" vertex="1">
+          <mxGeometry height="40" width="120" x="80" as="geometry">
+            <mxRectangle height="40" width="120" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--7" parent="juC9MrDamXzyti8gbEs--4" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="PK" vertex="1">
+          <mxGeometry height="40" width="42" x="200" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--8" parent="juC9MrDamXzyti8gbEs--3" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="242" y="79" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--9" parent="juC9MrDamXzyti8gbEs--8" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="date" vertex="1">
+          <mxGeometry height="40" width="80" as="geometry">
+            <mxRectangle height="40" width="80" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--10" parent="juC9MrDamXzyti8gbEs--8" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="full_date" vertex="1">
+          <mxGeometry height="40" width="120" x="80" as="geometry">
+            <mxRectangle height="40" width="120" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--11" parent="juC9MrDamXzyti8gbEs--8" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="200" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--12" parent="juC9MrDamXzyti8gbEs--3" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="242" y="119" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--13" parent="juC9MrDamXzyti8gbEs--12" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="80" as="geometry">
+            <mxRectangle height="40" width="80" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--14" parent="juC9MrDamXzyti8gbEs--12" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="year_num" vertex="1">
+          <mxGeometry height="40" width="120" x="80" as="geometry">
+            <mxRectangle height="40" width="120" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--15" parent="juC9MrDamXzyti8gbEs--12" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="200" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--20" parent="juC9MrDamXzyti8gbEs--3" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="242" y="159" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--21" parent="juC9MrDamXzyti8gbEs--20" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="80" as="geometry">
+            <mxRectangle height="40" width="80" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--22" parent="juC9MrDamXzyti8gbEs--20" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="month_num" vertex="1">
+          <mxGeometry height="40" width="120" x="80" as="geometry">
+            <mxRectangle height="40" width="120" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--23" parent="juC9MrDamXzyti8gbEs--20" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="200" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--24" parent="juC9MrDamXzyti8gbEs--3" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="242" y="199" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--25" parent="juC9MrDamXzyti8gbEs--24" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="string" vertex="1">
+          <mxGeometry height="40" width="80" as="geometry">
+            <mxRectangle height="40" width="80" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--26" parent="juC9MrDamXzyti8gbEs--24" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="month_name" vertex="1">
+          <mxGeometry height="40" width="120" x="80" as="geometry">
+            <mxRectangle height="40" width="120" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--27" parent="juC9MrDamXzyti8gbEs--24" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="200" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--28" parent="juC9MrDamXzyti8gbEs--3" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="242" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--29" parent="juC9MrDamXzyti8gbEs--28" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="string" vertex="1">
+          <mxGeometry height="40" width="80" as="geometry">
+            <mxRectangle height="40" width="80" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--30" parent="juC9MrDamXzyti8gbEs--28" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="month_year" vertex="1">
+          <mxGeometry height="40" width="120" x="80" as="geometry">
+            <mxRectangle height="40" width="120" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--31" parent="juC9MrDamXzyti8gbEs--28" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="200" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--32" parent="juC9MrDamXzyti8gbEs--3" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="242" y="279" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--33" parent="juC9MrDamXzyti8gbEs--32" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="80" as="geometry">
+            <mxRectangle height="40" width="80" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--34" parent="juC9MrDamXzyti8gbEs--32" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="day_of_month" vertex="1">
+          <mxGeometry height="40" width="120" x="80" as="geometry">
+            <mxRectangle height="40" width="120" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--35" parent="juC9MrDamXzyti8gbEs--32" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="200" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--36" parent="juC9MrDamXzyti8gbEs--3" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="242" y="319" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--37" parent="juC9MrDamXzyti8gbEs--36" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="string" vertex="1">
+          <mxGeometry height="40" width="80" as="geometry">
+            <mxRectangle height="40" width="80" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--38" parent="juC9MrDamXzyti8gbEs--36" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="day_of_week" vertex="1">
+          <mxGeometry height="40" width="120" x="80" as="geometry">
+            <mxRectangle height="40" width="120" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--39" parent="juC9MrDamXzyti8gbEs--36" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="200" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--40" parent="juC9MrDamXzyti8gbEs--3" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="242" y="359" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--41" parent="juC9MrDamXzyti8gbEs--40" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="string" vertex="1">
+          <mxGeometry height="40" width="80" as="geometry">
+            <mxRectangle height="40" width="80" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--42" parent="juC9MrDamXzyti8gbEs--40" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="day_name" vertex="1">
+          <mxGeometry height="40" width="120" x="80" as="geometry">
+            <mxRectangle height="40" width="120" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--43" parent="juC9MrDamXzyti8gbEs--40" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="200" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--44" parent="juC9MrDamXzyti8gbEs--3" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="242" y="399" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--45" parent="juC9MrDamXzyti8gbEs--44" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="boolean" vertex="1">
+          <mxGeometry height="40" width="80" as="geometry">
+            <mxRectangle height="40" width="80" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--46" parent="juC9MrDamXzyti8gbEs--44" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="is_weekend" vertex="1">
+          <mxGeometry height="40" width="120" x="80" as="geometry">
+            <mxRectangle height="40" width="120" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--47" parent="juC9MrDamXzyti8gbEs--44" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="200" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="Fact_Orders" mermaidId="n:Fact_Orders" mermaidBaseStyle="shape=table;startSize=39.75;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontSize=16;fontFamily=Recursive;strokeWidth=2;align=center;resizeLast=1;html=1;fillColor=#F0FDFA;strokeColor=#2DD4BF;fontColor=#28253D;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;" mermaidBaseValue="Fact_Orders" id="juC9MrDamXzyti8gbEs--52">
+          <mxCell parent="juC9MrDamXzyti8gbEs--2" style="shape=table;startSize=39.75;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontSize=14;fontFamily=Recursive;strokeWidth=2;align=center;resizeLast=1;html=1;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
+            <mxGeometry height="279" width="298" x="539" y="748" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="juC9MrDamXzyti8gbEs--53" parent="juC9MrDamXzyti8gbEs--52" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="298" y="39" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--54" parent="juC9MrDamXzyti8gbEs--53" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--55" parent="juC9MrDamXzyti8gbEs--53" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="order_id" vertex="1">
+          <mxGeometry height="40" width="177" x="79" as="geometry">
+            <mxRectangle height="40" width="177" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--56" parent="juC9MrDamXzyti8gbEs--53" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="PK" vertex="1">
+          <mxGeometry height="40" width="42" x="256" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--57" parent="juC9MrDamXzyti8gbEs--52" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="298" y="79" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--58" parent="juC9MrDamXzyti8gbEs--57" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--59" parent="juC9MrDamXzyti8gbEs--57" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="customer_id" vertex="1">
+          <mxGeometry height="40" width="177" x="79" as="geometry">
+            <mxRectangle height="40" width="177" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--60" parent="juC9MrDamXzyti8gbEs--57" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="FK" vertex="1">
+          <mxGeometry height="40" width="42" x="256" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--61" parent="juC9MrDamXzyti8gbEs--52" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="298" y="119" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--62" parent="juC9MrDamXzyti8gbEs--61" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--63" parent="juC9MrDamXzyti8gbEs--61" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="payment_method_id" vertex="1">
+          <mxGeometry height="40" width="177" x="79" as="geometry">
+            <mxRectangle height="40" width="177" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--64" parent="juC9MrDamXzyti8gbEs--61" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="FK" vertex="1">
+          <mxGeometry height="40" width="42" x="256" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--65" parent="juC9MrDamXzyti8gbEs--52" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="298" y="159" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--66" parent="juC9MrDamXzyti8gbEs--65" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--67" parent="juC9MrDamXzyti8gbEs--65" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="order_date_id" vertex="1">
+          <mxGeometry height="40" width="177" x="79" as="geometry">
+            <mxRectangle height="40" width="177" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--68" parent="juC9MrDamXzyti8gbEs--65" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="FK" vertex="1">
+          <mxGeometry height="40" width="42" x="256" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--69" parent="juC9MrDamXzyti8gbEs--52" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="298" y="199" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--70" parent="juC9MrDamXzyti8gbEs--69" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="string" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--71" parent="juC9MrDamXzyti8gbEs--69" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="order_status" vertex="1">
+          <mxGeometry height="40" width="177" x="79" as="geometry">
+            <mxRectangle height="40" width="177" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--72" parent="juC9MrDamXzyti8gbEs--69" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="256" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--73" parent="juC9MrDamXzyti8gbEs--52" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="298" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--74" parent="juC9MrDamXzyti8gbEs--73" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="decimal" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--75" parent="juC9MrDamXzyti8gbEs--73" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="grand_total" vertex="1">
+          <mxGeometry height="40" width="177" x="79" as="geometry">
+            <mxRectangle height="40" width="177" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--76" parent="juC9MrDamXzyti8gbEs--73" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="256" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="Fact_OrderItems" mermaidId="n:Fact_OrderItems" mermaidBaseStyle="shape=table;startSize=39.75;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontSize=16;fontFamily=Recursive;strokeWidth=2;align=center;resizeLast=1;html=1;fillColor=#FFF7ED;strokeColor=#FB923C;fontColor=#28253D;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;" mermaidBaseValue="Fact_OrderItems" id="juC9MrDamXzyti8gbEs--77">
+          <mxCell parent="juC9MrDamXzyti8gbEs--2" style="shape=table;startSize=39.75;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontSize=14;fontFamily=Recursive;strokeWidth=2;align=center;resizeLast=1;html=1;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
+            <mxGeometry height="359" width="266" x="555" y="1127" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="juC9MrDamXzyti8gbEs--78" parent="juC9MrDamXzyti8gbEs--77" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="266" y="39" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--79" parent="juC9MrDamXzyti8gbEs--78" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--80" parent="juC9MrDamXzyti8gbEs--78" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="order_detail_id" vertex="1">
+          <mxGeometry height="40" width="145" x="79" as="geometry">
+            <mxRectangle height="40" width="145" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--81" parent="juC9MrDamXzyti8gbEs--78" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="PK" vertex="1">
+          <mxGeometry height="40" width="42" x="224" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--82" parent="juC9MrDamXzyti8gbEs--77" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="266" y="79" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--83" parent="juC9MrDamXzyti8gbEs--82" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--84" parent="juC9MrDamXzyti8gbEs--82" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="order_id" vertex="1">
+          <mxGeometry height="40" width="145" x="79" as="geometry">
+            <mxRectangle height="40" width="145" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--85" parent="juC9MrDamXzyti8gbEs--82" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="FK" vertex="1">
+          <mxGeometry height="40" width="42" x="224" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--86" parent="juC9MrDamXzyti8gbEs--77" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="266" y="119" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--87" parent="juC9MrDamXzyti8gbEs--86" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--88" parent="juC9MrDamXzyti8gbEs--86" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="product_id" vertex="1">
+          <mxGeometry height="40" width="145" x="79" as="geometry">
+            <mxRectangle height="40" width="145" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--89" parent="juC9MrDamXzyti8gbEs--86" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="FK" vertex="1">
+          <mxGeometry height="40" width="42" x="224" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--90" parent="juC9MrDamXzyti8gbEs--77" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="266" y="159" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--91" parent="juC9MrDamXzyti8gbEs--90" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--92" parent="juC9MrDamXzyti8gbEs--90" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="order_date_id" vertex="1">
+          <mxGeometry height="40" width="145" x="79" as="geometry">
+            <mxRectangle height="40" width="145" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--93" parent="juC9MrDamXzyti8gbEs--90" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="FK" vertex="1">
+          <mxGeometry height="40" width="42" x="224" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--94" parent="juC9MrDamXzyti8gbEs--77" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="266" y="199" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--95" parent="juC9MrDamXzyti8gbEs--94" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--96" parent="juC9MrDamXzyti8gbEs--94" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="qty_ordered" vertex="1">
+          <mxGeometry height="40" width="145" x="79" as="geometry">
+            <mxRectangle height="40" width="145" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--97" parent="juC9MrDamXzyti8gbEs--94" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="224" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--98" parent="juC9MrDamXzyti8gbEs--77" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="266" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--99" parent="juC9MrDamXzyti8gbEs--98" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="decimal" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--100" parent="juC9MrDamXzyti8gbEs--98" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="unit_price" vertex="1">
+          <mxGeometry height="40" width="145" x="79" as="geometry">
+            <mxRectangle height="40" width="145" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--101" parent="juC9MrDamXzyti8gbEs--98" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="224" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--102" parent="juC9MrDamXzyti8gbEs--77" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="266" y="279" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--103" parent="juC9MrDamXzyti8gbEs--102" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="decimal" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--104" parent="juC9MrDamXzyti8gbEs--102" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="discount_amount" vertex="1">
+          <mxGeometry height="40" width="145" x="79" as="geometry">
+            <mxRectangle height="40" width="145" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--105" parent="juC9MrDamXzyti8gbEs--102" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="224" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--106" parent="juC9MrDamXzyti8gbEs--77" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="266" y="319" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--107" parent="juC9MrDamXzyti8gbEs--106" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="decimal" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--108" parent="juC9MrDamXzyti8gbEs--106" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="total_amount" vertex="1">
+          <mxGeometry height="40" width="145" x="79" as="geometry">
+            <mxRectangle height="40" width="145" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--109" parent="juC9MrDamXzyti8gbEs--106" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="224" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="Dim_Customer" mermaidId="n:Dim_Customer" mermaidBaseStyle="shape=table;startSize=39.75;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontSize=16;fontFamily=Recursive;strokeWidth=2;align=center;resizeLast=1;html=1;fillColor=#ECFEFF;strokeColor=#22D3EE;fontColor=#28253D;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;" mermaidBaseValue="Dim_Customer" id="juC9MrDamXzyti8gbEs--110">
+          <mxCell parent="juC9MrDamXzyti8gbEs--2" style="shape=table;startSize=39.75;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontSize=14;fontFamily=Recursive;strokeWidth=2;align=center;resizeLast=1;html=1;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
+            <mxGeometry height="119" width="231" x="572" y="528" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="juC9MrDamXzyti8gbEs--111" parent="juC9MrDamXzyti8gbEs--110" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="231" y="39" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--112" parent="juC9MrDamXzyti8gbEs--111" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="57" as="geometry">
+            <mxRectangle height="40" width="57" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--113" parent="juC9MrDamXzyti8gbEs--111" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="customer_id" vertex="1">
+          <mxGeometry height="40" width="132" x="57" as="geometry">
+            <mxRectangle height="40" width="132" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--114" parent="juC9MrDamXzyti8gbEs--111" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="PK" vertex="1">
+          <mxGeometry height="40" width="42" x="189" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--115" parent="juC9MrDamXzyti8gbEs--110" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="231" y="79" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--116" parent="juC9MrDamXzyti8gbEs--115" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="date" vertex="1">
+          <mxGeometry height="40" width="57" as="geometry">
+            <mxRectangle height="40" width="57" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--117" parent="juC9MrDamXzyti8gbEs--115" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="customer_since" vertex="1">
+          <mxGeometry height="40" width="132" x="57" as="geometry">
+            <mxRectangle height="40" width="132" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--118" parent="juC9MrDamXzyti8gbEs--115" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="189" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="Dim_PaymentMethod" mermaidId="n:Dim_PaymentMethod" mermaidBaseStyle="shape=table;startSize=39.75;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontSize=16;fontFamily=Recursive;strokeWidth=2;align=center;resizeLast=1;html=1;fillColor=#F0FDF4;strokeColor=#4ADE80;fontColor=#28253D;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;" mermaidBaseValue="Dim_PaymentMethod" id="juC9MrDamXzyti8gbEs--119">
+          <mxCell parent="juC9MrDamXzyti8gbEs--2" style="shape=table;startSize=39.75;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontSize=14;fontFamily=Recursive;strokeWidth=2;align=center;resizeLast=1;html=1;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
+            <mxGeometry height="159" width="298" x="843" y="488" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="juC9MrDamXzyti8gbEs--120" parent="juC9MrDamXzyti8gbEs--119" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="298" y="39" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--121" parent="juC9MrDamXzyti8gbEs--120" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="67" as="geometry">
+            <mxRectangle height="40" width="67" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--122" parent="juC9MrDamXzyti8gbEs--120" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="payment_method_id" vertex="1">
+          <mxGeometry height="40" width="189" x="67" as="geometry">
+            <mxRectangle height="40" width="189" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--123" parent="juC9MrDamXzyti8gbEs--120" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="PK" vertex="1">
+          <mxGeometry height="40" width="42" x="256" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--124" parent="juC9MrDamXzyti8gbEs--119" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="298" y="79" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--125" parent="juC9MrDamXzyti8gbEs--124" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="string" vertex="1">
+          <mxGeometry height="40" width="67" as="geometry">
+            <mxRectangle height="40" width="67" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--126" parent="juC9MrDamXzyti8gbEs--124" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="payment_method_name" vertex="1">
+          <mxGeometry height="40" width="189" x="67" as="geometry">
+            <mxRectangle height="40" width="189" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--127" parent="juC9MrDamXzyti8gbEs--124" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="256" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--128" parent="juC9MrDamXzyti8gbEs--119" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="298" y="119" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--129" parent="juC9MrDamXzyti8gbEs--128" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="string" vertex="1">
+          <mxGeometry height="40" width="67" as="geometry">
+            <mxRectangle height="40" width="67" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--130" parent="juC9MrDamXzyti8gbEs--128" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="payment_channel" vertex="1">
+          <mxGeometry height="40" width="189" x="67" as="geometry">
+            <mxRectangle height="40" width="189" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--131" parent="juC9MrDamXzyti8gbEs--128" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="256" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="Dim_Product" mermaidId="n:Dim_Product" mermaidBaseStyle="shape=table;startSize=39.75;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontSize=16;fontFamily=Recursive;strokeWidth=2;align=center;resizeLast=1;html=1;fillColor=#F5F3FF;strokeColor=#A78BFA;fontColor=#28253D;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;" mermaidBaseValue="Dim_Product" id="juC9MrDamXzyti8gbEs--132">
+          <mxCell parent="juC9MrDamXzyti8gbEs--2" style="shape=table;startSize=39.75;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontSize=14;fontFamily=Recursive;strokeWidth=2;align=center;resizeLast=1;html=1;shadow=1;shadowColor=#000000;shadowOffsetX=4;shadowOffsetY=4;shadowBlur=0;shadowOpacity=6;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" vertex="1">
+            <mxGeometry height="199" width="251" x="877" y="827" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="juC9MrDamXzyti8gbEs--133" parent="juC9MrDamXzyti8gbEs--132" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="251" y="39" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--134" parent="juC9MrDamXzyti8gbEs--133" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="int" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--135" parent="juC9MrDamXzyti8gbEs--133" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="product_id" vertex="1">
+          <mxGeometry height="40" width="130" x="79" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--136" parent="juC9MrDamXzyti8gbEs--133" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="PK" vertex="1">
+          <mxGeometry height="40" width="42" x="209" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--137" parent="juC9MrDamXzyti8gbEs--132" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="251" y="79" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--138" parent="juC9MrDamXzyti8gbEs--137" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="string" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--139" parent="juC9MrDamXzyti8gbEs--137" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="sku" vertex="1">
+          <mxGeometry height="40" width="130" x="79" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--140" parent="juC9MrDamXzyti8gbEs--137" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="209" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--141" parent="juC9MrDamXzyti8gbEs--132" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="251" y="119" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--142" parent="juC9MrDamXzyti8gbEs--141" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="string" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--143" parent="juC9MrDamXzyti8gbEs--141" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="category_name" vertex="1">
+          <mxGeometry height="40" width="130" x="79" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--144" parent="juC9MrDamXzyti8gbEs--141" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="209" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--145" parent="juC9MrDamXzyti8gbEs--132" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=1;strokeWidth=2;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+          <mxGeometry height="40" width="251" y="159" as="geometry" />
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--146" parent="juC9MrDamXzyti8gbEs--145" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="decimal" vertex="1">
+          <mxGeometry height="40" width="79" as="geometry">
+            <mxRectangle height="40" width="79" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--147" parent="juC9MrDamXzyti8gbEs--145" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="price" vertex="1">
+          <mxGeometry height="40" width="130" x="79" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juC9MrDamXzyti8gbEs--148" parent="juC9MrDamXzyti8gbEs--145" style="shape=partialRectangle;connectable=0;strokeWidth=2;fontFamily=Recursive;top=1;left=1;bottom=1;right=1;align=left;spacingLeft=8;overflow=hidden;fontSize=14;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" value="" vertex="1">
+          <mxGeometry height="40" width="42" x="209" as="geometry">
+            <mxRectangle height="40" width="42" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="order_date" mermaidId="e:Dim_Date-&gt;Fact_Orders#0" mermaidBaseStyle="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=0;startArrow=ERmandOne;startSize=14;endArrow=ERzeroToMany;endSize=14;jumpStyle=arc;jumpSize=12;strokeColor=#000000;strokeWidth=2;html=1;fontSize=14;labelBackgroundColor=#FFFFFF;fontFamily=Recursive;fontColor=#28253D;exitX=0.65;exitY=1;entryX=0.27;entryY=0;" mermaidBaseValue="order_date" id="juC9MrDamXzyti8gbEs--149">
+          <mxCell edge="1" parent="juC9MrDamXzyti8gbEs--2" source="juC9MrDamXzyti8gbEs--44" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=0;startArrow=ERmandOne;startSize=14;endArrow=ERzeroToMany;endSize=14;jumpStyle=arc;jumpSize=12;strokeWidth=2;html=1;fontSize=14;labelBackgroundColor=#FFFFFF;fontFamily=Recursive;fontColor=#28253D;exitX=0.62;exitY=1.025;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;exitDx=0;exitDy=0;exitPerimeter=0;" target="juC9MrDamXzyti8gbEs--52">
+            <mxGeometry relative="1" x="-0.2658" as="geometry">
+              <Array as="points">
+                <mxPoint x="440" y="726" />
+                <mxPoint x="610.7" y="726" />
+              </Array>
+              <mxPoint x="439.99999999999994" y="647" as="sourcePoint" />
+              <mxPoint x="612.1600000000001" y="746" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="order_date" mermaidId="e:Dim_Date-&gt;Fact_OrderItems#0" mermaidBaseStyle="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=0;startArrow=ERmandOne;startSize=14;endArrow=ERzeroToMany;endSize=14;jumpStyle=arc;jumpSize=12;strokeColor=#000000;strokeWidth=2;html=1;fontSize=14;labelBackgroundColor=#FFFFFF;fontFamily=Recursive;fontColor=#28253D;exitX=0.35;exitY=1;entryX=0.27;entryY=0;" mermaidBaseValue="order_date" id="juC9MrDamXzyti8gbEs--150">
+          <mxCell edge="1" parent="juC9MrDamXzyti8gbEs--2" source="juC9MrDamXzyti8gbEs--3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=0;startArrow=ERmandOne;startSize=14;endArrow=ERzeroToMany;endSize=14;jumpStyle=arc;jumpSize=12;strokeWidth=2;html=1;fontSize=14;labelBackgroundColor=#FFFFFF;fontFamily=Recursive;fontColor=#28253D;exitX=0.35;exitY=1;entryX=0.27;entryY=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="juC9MrDamXzyti8gbEs--77">
+            <mxGeometry relative="1" x="-0.3438033458518266" as="geometry">
+              <Array as="points">
+                <mxPoint x="374" y="697" />
+                <mxPoint x="374" y="1077" />
+                <mxPoint x="374" y="1107" />
+                <mxPoint x="626" y="1107" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="places" mermaidId="e:Dim_Customer-&gt;Fact_Orders#0" mermaidBaseStyle="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=0;startArrow=ERmandOne;startSize=14;endArrow=ERzeroToMany;endSize=14;jumpStyle=arc;jumpSize=12;strokeColor=#000000;strokeWidth=2;html=1;fontSize=14;labelBackgroundColor=#FFFFFF;fontFamily=Recursive;fontColor=#28253D;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="places" id="juC9MrDamXzyti8gbEs--151">
+          <mxCell edge="1" parent="juC9MrDamXzyti8gbEs--2" source="juC9MrDamXzyti8gbEs--110" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=0;startArrow=ERmandOne;startSize=14;endArrow=ERzeroToMany;endSize=14;jumpStyle=arc;jumpSize=12;strokeWidth=2;html=1;fontSize=14;labelBackgroundColor=#FFFFFF;fontFamily=Recursive;fontColor=#28253D;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="juC9MrDamXzyti8gbEs--52">
+            <mxGeometry relative="1" x="0.004950495049504955" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="paid_by" mermaidId="e:Dim_PaymentMethod-&gt;Fact_Orders#0" mermaidBaseStyle="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=0;startArrow=ERmandOne;startSize=14;endArrow=ERzeroToMany;endSize=14;jumpStyle=arc;jumpSize=12;strokeColor=#000000;strokeWidth=2;html=1;fontSize=14;labelBackgroundColor=#FFFFFF;fontFamily=Recursive;fontColor=#28253D;exitX=0.5;exitY=1;entryX=0.73;entryY=0;" mermaidBaseValue="paid_by" id="juC9MrDamXzyti8gbEs--152">
+          <mxCell edge="1" parent="juC9MrDamXzyti8gbEs--2" source="juC9MrDamXzyti8gbEs--119" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=0;startArrow=ERmandOne;startSize=14;endArrow=ERzeroToMany;endSize=14;jumpStyle=arc;jumpSize=12;strokeWidth=2;html=1;fontSize=14;labelBackgroundColor=#FFFFFF;fontFamily=Recursive;fontColor=#28253D;exitX=0.5;exitY=1;entryX=0.73;entryY=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="juC9MrDamXzyti8gbEs--52">
+            <mxGeometry relative="1" x="-0.6979166666666667" as="geometry">
+              <Array as="points">
+                <mxPoint x="992" y="728" />
+                <mxPoint x="757" y="728" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="contains" mermaidId="e:Fact_Orders-&gt;Fact_OrderItems#0" mermaidBaseStyle="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=0;startArrow=ERmandOne;startSize=14;endArrow=ERoneToMany;endSize=14;jumpStyle=arc;jumpSize=12;strokeColor=#000000;strokeWidth=2;html=1;fontSize=14;labelBackgroundColor=#FFFFFF;fontFamily=Recursive;fontColor=#28253D;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="contains" id="juC9MrDamXzyti8gbEs--153">
+          <mxCell edge="1" parent="juC9MrDamXzyti8gbEs--2" source="juC9MrDamXzyti8gbEs--52" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=0;startArrow=ERmandOne;startSize=14;endArrow=ERoneToMany;endSize=14;jumpStyle=arc;jumpSize=12;strokeWidth=2;html=1;fontSize=14;labelBackgroundColor=#FFFFFF;fontFamily=Recursive;fontColor=#28253D;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="juC9MrDamXzyti8gbEs--77">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="includes" mermaidId="e:Dim_Product-&gt;Fact_OrderItems#0" mermaidBaseStyle="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=0;startArrow=ERmandOne;startSize=14;endArrow=ERzeroToMany;endSize=14;jumpStyle=arc;jumpSize=12;strokeColor=#000000;strokeWidth=2;html=1;fontSize=14;labelBackgroundColor=#FFFFFF;fontFamily=Recursive;fontColor=#28253D;exitX=0.5;exitY=1;entryX=0.73;entryY=0;" mermaidBaseValue="includes" id="juC9MrDamXzyti8gbEs--154">
+          <mxCell edge="1" parent="juC9MrDamXzyti8gbEs--2" source="juC9MrDamXzyti8gbEs--132" style="edgeStyle=orthogonalEdgeStyle;rounded=1;curved=0;startArrow=ERmandOne;startSize=14;endArrow=ERzeroToMany;endSize=14;jumpStyle=arc;jumpSize=12;strokeWidth=2;html=1;fontSize=14;labelBackgroundColor=#FFFFFF;fontFamily=Recursive;fontColor=#28253D;exitX=0.5;exitY=1;entryX=0.73;entryY=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DRecursive;" target="juC9MrDamXzyti8gbEs--77">
+            <mxGeometry relative="1" x="-0.7146892655367232" as="geometry">
+              <Array as="points">
+                <mxPoint x="1002" y="1107" />
+                <mxPoint x="749" y="1107" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
