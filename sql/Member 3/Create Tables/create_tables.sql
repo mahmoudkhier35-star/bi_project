@@ -1,6 +1,6 @@
 CREATE TABLE Dim_Product (
     product_key INT PRIMARY KEY,
-    sku VARCHAR(50),
+    sku VARCHAR(100),
     category_name VARCHAR(100),
     price DECIMAL(10,2)
 );
@@ -31,7 +31,7 @@ CREATE TABLE Dim_PaymentMethod (
 );
 
 CREATE TABLE Fact_Orders (
-    order_id INT PRIMARY KEY,
+    order_id varchar(20) PRIMARY KEY,
     customer_key INT,
     payment_method_key INT,
     order_date_key INT,
@@ -50,7 +50,7 @@ CREATE TABLE Fact_Orders (
 
 CREATE TABLE Fact_OrderItems (
     order_detail_id INT PRIMARY KEY,
-    order_id INT,
+    order_id varchar(20),
     product_key INT,
     order_date_key INT,
     qty_ordered INT,
